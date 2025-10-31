@@ -9,7 +9,18 @@ namespace TextLibrary.Implementations
 {
     public class CaseConverter : ICaseConverter
     {
-        public string ToUpper(string text) => text ?? string.Empty;
-        public string ToLower(string text) => text ?? string.Empty;
+        public string ToUpper(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+            return text.ToUpper();
+        }
+
+        public string ToLower(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+            return text.ToLower();
+        }
     }
 }
