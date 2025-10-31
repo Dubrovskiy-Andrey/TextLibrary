@@ -47,6 +47,7 @@
     <Compile Include="Implementations\LongestWordFinder.cs" />
     <Compile Include="Implementations\TextCleaner.cs" />
     <Compile Include="Implementations\WordCounter.cs" />
+    <Compile Include="Implementations\WordStatistics.cs" />
     <Compile Include="Interfaces\ICaseConverter.cs" />
     <Compile Include="Interfaces\ICharFrequencyAnalyzer.cs" />
     <Compile Include="Interfaces\IJustifier.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Interfaces\ITextCleaner.cs" />
     <Compile Include="Interfaces\ITextProcessingService.cs" />
     <Compile Include="Interfaces\IWordCounter.cs" />
+    <Compile Include="Interfaces\IWordStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TextProcessingService.cs" />
   </ItemGroup>

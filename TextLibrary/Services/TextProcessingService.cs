@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextLibrary.Implementations;
 using TextLibrary.Interfaces;
 
 namespace TextLibrary.Services
@@ -15,6 +16,7 @@ namespace TextLibrary.Services
         private readonly ITextCleaner _cleaner;
         private readonly ICaseConverter _caseConverter;
         private readonly IJustifier _justifier;
+        private readonly IWordStatistics _wordStatistics;
 
         public TextProcessingService(
             IWordCounter wordCounter,
@@ -30,6 +32,7 @@ namespace TextLibrary.Services
             _cleaner = cleaner;
             _caseConverter = caseConverter;
             _justifier = justifier;
+            _wordStatistics = new WordStatistics(); 
         }
 
         public int CountWords(string text) => _wordCounter.CountWords(text);
@@ -39,5 +42,6 @@ namespace TextLibrary.Services
         public string ConvertToUpper(string text) => _caseConverter.ToUpper(text);
         public string ConvertToLower(string text) => _caseConverter.ToLower(text);
         public string JustifyText(string text, int width) => _justifier.Justify(text, width);
+        public double GetAverageWordLength(string text) => _wordStatistics.GetAverageWordLength(text);
     }
 }

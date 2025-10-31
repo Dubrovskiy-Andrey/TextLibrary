@@ -42,12 +42,14 @@ namespace TextLibrary.Client
                     Console.WriteLine("5 - Преобразовать в верхний регистр");
                     Console.WriteLine("6 - Преобразовать в нижний регистр");
                     Console.WriteLine("7 - Выравнивание по ширине");
-                    Console.WriteLine("8 - Ввести новый текст");
+                    Console.WriteLine("8 - Средняя длина слова");
+                    Console.WriteLine("9 - Ввести новый текст");
                     Console.WriteLine("0 - Выход");
                     Console.Write("Ваш выбор: ");
                     var choice = Console.ReadLine();
+
                     if (choice == "0") return;
-                    if (choice == "8") break;
+                    if (choice == "9") break;
 
                     switch (choice)
                     {
@@ -80,13 +82,13 @@ namespace TextLibrary.Client
                         case "7":
                             Console.Write("Введите ширину (число): ");
                             if (int.TryParse(Console.ReadLine(), out int w) && w > 0)
-                            {
                                 Console.WriteLine(service.JustifyText(text, w));
-                            }
                             else
-                            {
                                 Console.WriteLine("Неверная ширина");
-                            }
+                            break;
+                        case "8":
+                            double avg = service.GetAverageWordLength(text);
+                            Console.WriteLine($"Средняя длина слова: {avg:F2}");
                             break;
                         default:
                             Console.WriteLine("Неверный выбор");

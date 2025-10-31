@@ -15,5 +15,6 @@ namespace TextLibrary.Interfaces
         string ConvertToUpper(string text);
         string ConvertToLower(string text);
         string JustifyText(string text, int width);
+        double GetAverageWordLength(string text);
     }
 }
